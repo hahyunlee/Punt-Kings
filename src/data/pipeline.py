@@ -1,82 +1,155 @@
 import glob
 import pandas as pd
-
-def _load_xl_ata(path):
-
-    excel_files = glob.glob(path + "/*.xls")
-    excel_files = sorted(excel_files)
-    files_list = []
-
-    for file_ in excel_files:
-        df = pd.read_excel(file_, index_col=None, header=0)
-        files_list.append(df)
-
-    return files_list
-#
-# def _convert_positions_g_f(column):
-#
-#     for value in column:
-#         if value == "PG" or value == "SG" or value == "PG/SG":
-#             column = column.replace(value,"G")
-#         elif value == "SF" or value == "PF" or value == "SF/PF":
-#             column = column.replace(value,"F")
-#         else:
-#             continue
-#
-#     return column
+import numpy as np
 
 
-#method that converts position to multiple groups after dummifying original table and removing the combined position
+def load_data(path,file_type='csv'):
+    data_files = glob.glob(path + "/*."+file_type)
+    data_files = sorted(data_files)
+    df_list = []
 
-def _convert_df_list_to_dict(list_df):
-    dict_df = {}
-    df_names = ['0304', '0405', '0506', '0607', '0708', '0809', '0910', '1011',
-                '1112', '1213', '1314', '1415', '1516', '1617', '1718', '1819', '1920']
+    for file_ in data_files:
+        if file_type == 'xls':
+            df = pd.read_excel(file_, index_col=None, header=0)
+            df_list.append(df)
+        elif file_type == 'csv':
+            df = pd.read_csv(file_, index_col=None, header=0)
+            df_list.append(df)
+        else:
+            error_log = "Method currently only reads xls or csv files."
+            return error_log
+    return df_list
 
-    col_names = ['Name', 'Team', 'Pos', 'g', 'm/g', 'p/g', '3/g', 'r/g',
-                 'a/g', 's/g', 'b/g', 'fg%', 'fga/g', 'ft%', 'fta/g', 'to/g']
 
-    for df, name in zip(list_df, df_names):
-        dict_df['df_{0}'.format(name)] = df[col_names]
+def create_df_dict(df_list,first_season=1990):
+    df_dict = {}
+    df_names = []
+    columns = ['Player', 'Pos', 'Age', 'Tm', 'G', 'GS', 'MP', 'FG',
+               'FGA', '3P', '3PA', '2P', '2PA', 'eFG%', 'FT',
+               'FTA', 'ORB', 'DRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
 
-    return dict_df
+    for year in range(first_season,first_season+len(df_list)):
+        df_names.append(year)
+
+    for df, name in zip(df_list, df_names):
+        df_dict['df_{0}'.format(name)] = df[columns]
+        # Clean DataFrame and store into dictionary
+        df_dict['df_{0}'.format(name)] = _clean_br_df(df_dict['df_{0}'.format(name)])
+
+    return df_dict
 
 
-#
-# def _run_pipeline(dict_df, season_start, totals=True):
-#     season_year = season_start
-#     for i in dict_df.keys():
-#         dict_df[i] =
-#
-#     return dict_df
-#
-# def _merge_previous_season(df,season_year,totals=True):
-#     if totals == True:
-#         list_cols = ['Round', 'Rank', 'Value', 'Name', 'g', 'm', 'p', '3', 'r', 'a', 's',
-#                      'b', 'fg%', 'fga', 'ft%', 'fta', 'to', 'pV', '3V', 'rV', 'aV', 'sV',
-#                      'bV', 'fg%V', 'ft%V', 'toV', 'Team_ATL', 'Team_BKN', 'Team_BOS',
-#                      'Team_CHA', 'Team_CHI', 'Team_CLE', 'Team_DAL', 'Team_DEN', 'Team_DET',
-#                      'Team_FA', 'Team_GSW', 'Team_HOU', 'Team_IND', 'Team_LAC', 'Team_LAL',
-#                      'Team_MEM', 'Team_MIA', 'Team_MIL', 'Team_MIN', 'Team_NOR', 'Team_NYK',
-#                      'Team_OKC', 'Team_ORL', 'Team_PHI', 'Team_PHO', 'Team_POR', 'Team_SAC',
-#                      'Team_SAS', 'Team_SEA', 'Team_TOR', 'Team_UTA', 'Team_WAS', 'Pos_C',
-#                      'Pos_F', 'Pos_G']
-#     else:
-#         list_cols = ['Name', 'g', 'm/g', 'p/g',
-#                      '3/g', 'r/g', 'a/g', 's/g', 'b/g', 'fg%', 'fga/g', 'ft%', 'fta/g',
-#                      'to/g', 'pV', '3V', 'rV', 'aV', 'sV', 'bV', 'fg%V', 'ft%V', 'toV', 'Team_ATL', 'Team_BKN',
-#                      'Team_BOS',
-#                      'Team_CHA', 'Team_CHI', 'Team_CLE', 'Team_DAL', 'Team_DEN', 'Team_DET',
-#                      'Team_FA', 'Team_GSW', 'Team_HOU', 'Team_IND', 'Team_LAC', 'Team_LAL',
-#                      'Team_MEM', 'Team_MIA', 'Team_MIL', 'Team_MIN', 'Team_NOR', 'Team_NYK',
-#                      'Team_OKC', 'Team_ORL', 'Team_PHI', 'Team_PHO', 'Team_POR', 'Team_SAC',
-#                      'Team_SAS', 'Team_SEA', 'Team_TOR', 'Team_UTA', 'Team_WAS', 'Pos_C',
-#                      'Pos_F', 'Pos_G']
-#
-#
-#
-# def run_data_pipeline(path):
-#     dict_df = _convert_df_list_to_dict(_load_data(path))
-#
-#     return dict_df
+def _clean_br_df(df):
+    """
+    This method will clean our raw data by dropping empty rows, refining player positions to 5 major positions,
+    removing players playing for multiple teams (aggregate rows), and dummify player positions.
 
+    :param df:
+    :return:
+    """
+
+    # Take out empty rows
+    df.dropna(how='all',inplace=True)
+
+    # Convert multiple positions to a primary position from Basketball Reference
+    df['Pos'] = df['Pos'].apply(lambda s: s[:2])
+    df['Pos'].mask(df['Pos']=='C-', 'C', inplace=True)
+
+    # Take out the rows for the player that played in multiple teams and keep their TOT stats
+    multi_teams_player_list = (df.loc[(df['Tm']=='TOT')].Player).tolist()
+    mask_1 = df['Player'].isin(multi_teams_player_list)
+    mask_2 = df['Tm']!="TOT"
+    df = df.loc[~( (mask_1) & (mask_2) )]
+
+    # Remove team column
+    df.drop(columns=['Tm'],inplace=True)
+
+    # Dummify player positions
+    df = pd.get_dummies(df, columns=['Pos'])
+
+    return df
+
+
+def _prepare_data(df_old, df_new, target_stat):
+    """
+    This method will merge dataframes from the preceding season, joined by player name.
+    The later season will be our target variables based on last season performance and we will train
+    our data from previous 30+ seasons.
+
+    X will be our training data, and y will be one statistical variable we will predict.
+    Will be recursively called to predict
+
+    Ex:
+    X,y = prepare_data(df_2018, df_2019, 'PTS')
+
+    Will grab points from the new season and attach to a dataframe from the previous season where PTS_y is
+    the new target. X will be the values from the previous season and y being the target stat.
+
+    :return: X values, and target y
+    """
+
+    df_new = df_new.filter(items=['Player', target_stat])
+    df = df_old.merge(df_new, left_on='Player', right_on='Player', how='inner')
+    y = df[target_stat + '_y']
+    X = df.drop(columns=['Player', target_stat + '_y']).values
+
+    return X, y
+
+def prepare_all_data(dict_dfs, target_col, newest_year = "df_2019"):
+    """
+    We ultimately want to predict the new season based on the previous season.
+    The most recent season completed will be our X data we will use for the best model we find.
+    This means we exclude the most recent season for training/cross-validating.
+
+    :param dict_dfs:
+    :param target_col:
+    :param newest_year:
+    :return: combined X and y for all seasons in the dictionary
+    """
+
+    # Get the index of the newest year in the dictionary of dfs
+    last_idx = sorted(dict_dfs.keys()).index(newest_year)
+
+    # Creating 2 list of keys, one with all keys, another without the earliest season key
+    keys_1 = sorted(dict_dfs.keys())
+    keys_2 = sorted(dict_dfs.keys())[1:last_idx + 1]
+
+    # Create a list of X variables and y target corresponding to  every season
+    list_X = []
+    list_y = []
+
+    # Recursively calling prepare_data method for a season and the season following, storing X, y in lists
+    for i, j in zip(keys_1, keys_2):
+        X, y = _prepare_data(dict_dfs[i], dict_dfs[j], target_col)
+        list_X.append(X)
+        list_y.append(y)
+
+    # Creating/combining all the necessary components for modeling
+    X = np.concatenate(list_X)
+    y = np.concatenate(list_y)
+
+    return X, y
+
+
+# Preparing test variables (for the most recent season)
+def prepare_final_data(df):
+    """
+    This should be the most recent completed season used for predicting newest season.
+
+    :param df:
+    :return:
+    """
+    X_final = df.drop(columns=['Player']).values
+    return X_final
+
+
+def project_baseline_model_result(df,target_name):
+    """
+
+    If we find that replicating our target from last season as our projection is the best result,
+    we will use last year's results as our projection as well.
+
+    """
+    y_target = df[target_name]
+
+    return y_target
