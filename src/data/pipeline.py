@@ -64,13 +64,22 @@ def _clean_br_df(df):
     # Remove team column
     df.drop(columns=['Tm'],inplace=True)
 
+    # Replace NaN eFG% w/ 0
+    df['eFG%'].mask(df['eFG%'].isna(),0,inplace=True)
+
     # Dummify player positions
     df = pd.get_dummies(df, columns=['Pos'])
+
+
+    # Use only baseline features:
+    # baseline_features = ['Player','G','FG','FGA','FT','FTA','3P', '3PA',
+    #                  'ORB', 'DRB', 'AST', 'STL', 'BLK', 'TOV','PTS']
+    # df = df[baseline_features]
 
     return df
 
 
-def _prepare_data(df_old, df_new, target_stat):
+def _prepare_data(df_old, df_new, target_colname):
     """
     This method will merge dataframes from the preceding season, joined by player name.
     The later season will be our target variables based on last season performance and we will train
@@ -88,21 +97,21 @@ def _prepare_data(df_old, df_new, target_stat):
     :return: X values, and target y
     """
 
-    df_new = df_new.filter(items=['Player', target_stat])
+    df_new = df_new.filter(items=['Player', target_colname])
     df = df_old.merge(df_new, left_on='Player', right_on='Player', how='inner')
-    y = df[target_stat + '_y']
-    X = df.drop(columns=['Player', target_stat + '_y']).values
+    y = df[target_colname + '_y']
+    X = df.drop(columns=['Player', target_colname+ '_y']).values
 
     return X, y
 
-def prepare_all_data(dict_dfs, target_col, newest_year = "df_2019"):
+def prepare_all_data(dict_dfs, target_colname, newest_year = "df_2019"):
     """
     We ultimately want to predict the new season based on the previous season.
     The most recent season completed will be our X data we will use for the best model we find.
     This means we exclude the most recent season for training/cross-validating.
 
     :param dict_dfs:
-    :param target_col:
+    :param target_colname:
     :param newest_year:
     :return: combined X and y for all seasons in the dictionary
     """
@@ -120,7 +129,7 @@ def prepare_all_data(dict_dfs, target_col, newest_year = "df_2019"):
 
     # Recursively calling prepare_data method for a season and the season following, storing X, y in lists
     for i, j in zip(keys_1, keys_2):
-        X, y = _prepare_data(dict_dfs[i], dict_dfs[j], target_col)
+        X, y = _prepare_data(dict_dfs[i], dict_dfs[j], target_colname)
         list_X.append(X)
         list_y.append(y)
 
@@ -143,13 +152,14 @@ def prepare_final_data(df):
     return X_final
 
 
-def project_baseline_model_result(df,target_name):
+def project_baseline_model_result(df,target_stat):
     """
 
     If we find that replicating our target from last season as our projection is the best result,
     we will use last year's results as our projection as well.
 
     """
-    y_target = df[target_name]
+    y_target = df[target_stat]
 
     return y_target
+
