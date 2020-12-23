@@ -80,7 +80,7 @@ def _print_baseline_metrics(dict_df, cat, newest_season=2020):
     y_test = df[cat + '_y'].values
     y_pred = df[cat + '_x'].values
 
-    rmse_base = np.sqrt(mean_squared_error(y_test, y_pred))
+    rmse_base = np.sqrt(mean_squared_error(y_test, y_pred)).round(3)
     print('Baseline model RMSE:', rmse_base)
 
     return

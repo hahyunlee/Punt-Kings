@@ -1,13 +1,90 @@
 # Punt Kings
 
+Have a competitive edge in your 9-Cat Fantasy Basketball league.
+
+![NBA Allstars](img/nba_allstars.jpeg)
+
+
+### What is Punt Kings?
+
+The goal of Punt Kings is to provide fantasy basketball managers a tool to optimize their roster with a competitive 
+edge in 9 category (9-Cat) formats.
+
+##### The Process:
+
+1) Project individual player performances for the upcoming NBA season.
+2) Construct a statistical strengths/weaknesses profile for each player.
+3) Provide an interactive draft tool that provides best available player information, provides overall team strengths 
+and weaknesses relative to the rest of the league, provide what type of statistics to target in any given round 
+all simultaneously during a fantasy draft. 
+
+
+### What is a 9-Cat format in fantasy basketball?
+
+Unlike fantasy football or points format fantasy basketball that uses a standardized point system for all statistics,
+**9-Cat format compartmentalizes a head to head match-up into 9 different categories based on 9 basketball game 
+statistics**. Every fantasy team in a weekly match-up battles to win out the majority of the 9 categories.
+
+The 9 categories aggregated from a weekly match-up are:
+
+1) Field Goal Percentage (FG%)
+2) Free Throw Percentage (FT%)
+3) Three Points Made (3PM)
+4) Points (PTS)
+5) Rebounds (REB)
+6) Assists (AST)
+7) Steals (STL)
+8) Blocks (BLK)
+9) Turnovers (TO)
+
+For every category a team edges the other team in is 1 point to their weekly match-up. 
+The range of outcomes are from losing 0-9 to winning 9-0 every week. 
+
+Example: Team A vs. Team B
+
+Team A wins
+1) FT% (higher percentage than Team B)
+2) 3PM (more 3 pointers made than Team B)
+3) PTS (scored more points than Team B)
+4) AST (tallied more assists than Team B)
+5) STL (more steals than Team B)
+
+Team B wins
+1) FG% (higher percentage than Team A)
+2) REB (collected more rebounds than Team A)
+3) BLK (blocked more shots than Team A)
+4) TO (generated less turnovers than Team A)
+
+***Team A wins 5-4.***
+
+*Depending on your league settings, your overall season record is either 1) aggregated by your weekly score (Team A would 
+have an overall record of 5-4 and Team B 4-5) or 2) a win is 1-0, a loss is 0-1, and a tie is 0-0-1.*
+
+
+To win in 9-Cat fantasy basketball you must have the best overall record, beating out opponents in head to head 
+match-ups by winning majority of the 9 categories. 
+
+
+### What is "punting" and why use a "punting" strategy?
 
 
 
 
 
+#### The Data
+
+[screencap on basketball reference page 2019 season stats]
+
+scraping data from basketball reference
+
+nba season 1990 to present.
 
 
+#### Data Preparation (Modeling Logic / Plan)
 
+
+Create a model for each predictive stat
+Fit different models and extract the best performing model for each category.
 
 
 
@@ -110,6 +187,26 @@ Lasso model RMSE: 636.6764
 Baseline model RMSE: 695.98160755745
 
 
+
+
+
+#### Draft Tool
+
+[scraping yahoo data draft results real time]
+
+[compare an optimized (w/ adp) lineup using some punt strategy vs a "stacked" 
+team that do not work together (show their adp)]
+
+
+Draft strategy (concept of extracting optimal value on a per round basis)
+
+Catergorical awareness (use this tool to understand a player's strength and weakness)
+
+
 #### Future Work
 
 1) Add more features to data for modeling (draft class? age? ligament-type injury history?)
+2) Need a way to understand a player coming off an injury
+3) Predictions for rookies
+4) Add a human element to projections (understanding/projecting impact of player team and if usage is trending up
+add a sentiment factor for each player.)

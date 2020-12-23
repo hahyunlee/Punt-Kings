@@ -34,16 +34,17 @@ def _add_rookie_projections(df_rookies, projections_df):
 
 
 def _calculate_total_value(df):
+    df_final = df.copy()
     value_cols = []
 
-    for col in df.columns:
+    for col in df_final.columns:
         if col.endswith('_Z'):
             value_cols.append(col)
 
-    df['Total'] = df[value_cols].sum(axis=1)
-    df = df.sort_values('Total', ascending=False).reset_index(drop=True)
+    df_final['Total'] = df_final[value_cols].sum(axis=1)
+    df_final = df_final.sort_values('Total', ascending=False).reset_index(drop=True)
 
-    return df
+    return df_final
 
 
 def replace_injured_players(df_dict, projections_df, list_players, injured_year=2020):
@@ -82,11 +83,11 @@ def calculate_zscores(df):
 
 
 def punt_cats(df,punt_list=['tog']):
-
+    df_final = df.copy()
     for cat in punt_list:
-        df.drop(columns=[cat,cat+'_Z'],inplace=True)
+        df_final.drop(columns=[cat,cat+'_Z'],inplace=True)
 
-    df = _calculate_total_value(df)
+    df_final = _calculate_total_value(df_final)
 
-    return df
+    return df_final
 
