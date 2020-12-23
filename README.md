@@ -86,9 +86,9 @@ attention in categories of the user's choice.
 - "Punting" is also commonly mistaken as "wanting to be BAD in a category". That is far from what punting accomplishes.
 When managers focus on the category they want to avoid, they effectively miss out on a player that provides good value
 in other categories you may need in your team build. 
-- There is a fine line to punting and if not careful you could end up being unstoppable in 4 categories, but struggle
-to be competitive in 5 other categories. 
-- This is way optimization and tracking of team stats is crucial, and why Punt Kings will provide value to fantasy 
+- There is a fine line to punting and if not careful the team could be unstoppable in 4 categories, but struggle
+to be competitive in 5 others, leading to losses every week. 
+- That is why optimization and tracking of team stats is crucial, and why Punt Kings will provide value to fantasy 
 managers that want a competitive edge in their respective leagues. 
 
 ---
