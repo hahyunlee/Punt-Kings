@@ -58,20 +58,43 @@ Team B wins
 ***Team A wins 5-4.***
 
 *Depending on your league settings, your overall season record is either 1) aggregated by your weekly score (Team A would 
-have an overall record of 5-4 and Team B 4-5) or 2) a win is 1-0, a loss is 0-1, and a tie is 0-0-1.*
+have an overall record of 5-4 and Team B, 4-5) or 2) a win is 1-0, a loss is 0-1, and a tie is 0-0-1.*
 
 
 To win in 9-Cat fantasy basketball you must have the best overall record, beating out opponents in head to head 
-match-ups by winning majority of the 9 categories. 
+match-ups by winning majority of the 9 categories, and more importantly making the playoffs and winning every match-up
+to secure a championship victory!
 
 
 ### What is "punting" and why use a "punting" strategy?
 
+##### The What
+- Implementing a "punting" strategy is where the competitive edge comes into play for your fantasy team. 
+- Instead of spreading out your team thin by ambitiously attempting to be good in all 9 categories, 
+the idea of punting is to focus your team build on certain categories, and in effect "punting" or better word "avoiding"
+other categories of the 9 total categories.
+##### The Why
+- When focusing your resources in a 13 man roster build to 8, 7, or 6 categories (depending on personal preference), you
+are effectively GREAT at those focused categories, making your team dangerous in a head to head match-up 
+to win majority of the categories.
+- When focusing on specific categories, you will in effect "punt" or "defer" other statistics.
+
+##### Disclaimer
+- "Punting" is not a new concept and has been used by many experienced managers in previous years. Punt Kings is here
+to make this process streamlined and user-friendly to help identify extracting optimal value in your team build.
+- "Punting" is also commonly mistaken as "wanting to be BAD in a category". That is far from what punting accomplishes.
+When managers focus on the category they want to avoid, they effectively miss out on a player that provides good value
+in other categories you may need in your team build. 
+- There is a fine line to punting and if not careful you could end up being unstoppable in 4 categories, but struggle
+to be competitive in 5 other categories. 
+- This is way optimization and tracking of team stats is crucial, and why Punt Kings will provide value to fantasy 
+managers that want a competitive edge in their respective leagues. 
+
+---
 
 
-
-
-#### The Data
+## Data Science Process
+### The Data
 
 [screencap on basketball reference page 2019 season stats]
 
@@ -190,7 +213,9 @@ Baseline model RMSE: 695.98160755745
 
 
 
-#### Draft Tool
+---
+
+### Punt Kings Draft Tool
 
 [scraping yahoo data draft results real time]
 
@@ -203,7 +228,11 @@ Draft strategy (concept of extracting optimal value on a per round basis)
 Catergorical awareness (use this tool to understand a player's strength and weakness)
 
 
-#### Future Work
+
+
+---
+
+###Future Work
 
 1) Add more features to data for modeling (draft class? age? ligament-type injury history?)
 2) Need a way to understand a player coming off an injury

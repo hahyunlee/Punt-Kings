@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75503290-cb76-4441-b41b-bfa3be3b1f3a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/punting-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/punting-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/data_scraper.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/data_scraper.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/punting.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/punting.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draft_kit/draft_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft_kit/draft_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draft_kit/sample_draft_results" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft_kit/sample_draft_results" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/predict_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/predict_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/projections.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/projections.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,8 +86,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="284">
-                <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+              <first_editor relative-caret-position="690">
+                <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
               </first_editor>
               <second_editor />
             </state>
@@ -449,8 +441,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="284">
-            <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+          <first_editor relative-caret-position="690">
+            <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
           </first_editor>
           <second_editor />
         </state>
