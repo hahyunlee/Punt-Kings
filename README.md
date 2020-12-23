@@ -1,31 +1,31 @@
 # Punt Kings
 
-Have a competitive edge in your 9-Cat Fantasy Basketball league.
+Generate a competitive edge in your 9-Cat Fantasy Basketball league.
 
 ![NBA Allstars](img/nba_allstars.jpeg)
 
 
 ### What is Punt Kings?
 
-The goal of Punt Kings is to provide fantasy basketball managers a tool to optimize their roster with a competitive 
+The goal of Punt Kings is to provide fantasy basketball managers a platform to optimize their roster with a competitive 
 edge in 9 category (9-Cat) formats.
 
 ##### The Process:
 
 1) Project individual player performances for the upcoming NBA season.
 2) Construct a statistical strengths/weaknesses profile for each player.
-3) Provide an interactive draft tool that provides best available player information, provides overall team strengths 
-and weaknesses relative to the rest of the league, provide what type of statistics to target in any given round 
-all simultaneously during a fantasy draft. 
+3) Provide an interactive draft tool that presents the best available player information, overall team 
+strengths  and weaknesses relative to the rest of the league, and the type of statistics to target in any given
+round all simultaneously during a fantasy draft. 
 
 
 ### What is a 9-Cat format in fantasy basketball?
 
 Unlike fantasy football or points format fantasy basketball that uses a standardized point system for all statistics,
-**9-Cat format compartmentalizes a head to head match-up into 9 different categories based on 9 basketball game 
-statistics**. Every fantasy team in a weekly match-up battles to win out the majority of the 9 categories.
+**9-Cat format compartmentalizes a head to head match-up into 9 different categories based on 9 basketball 
+statistics in an NBA game**. Every fantasy team in a weekly match-up battles to win out the majority of the 9 categories.
 
-The 9 categories aggregated from a weekly match-up are:
+The 9 categories aggregated from weekly match-ups are:
 
 1) Field Goal Percentage (FG%)
 2) Free Throw Percentage (FT%)
@@ -37,19 +37,18 @@ The 9 categories aggregated from a weekly match-up are:
 8) Blocks (BLK)
 9) Turnovers (TO)
 
-For every category a team edges the other team in is 1 point to their weekly match-up. 
-The range of outcomes are from losing 0-9 to winning 9-0 every week. 
+For every category a team edges the other team in, the team is awarded 1 point. 
 
 Example: Team A vs. Team B
 
-Team A wins
+Team A wins the categories:
 1) FT% (higher percentage than Team B)
 2) 3PM (more 3 pointers made than Team B)
 3) PTS (scored more points than Team B)
 4) AST (tallied more assists than Team B)
 5) STL (more steals than Team B)
 
-Team B wins
+Team B wins the categories:
 1) FG% (higher percentage than Team A)
 2) REB (collected more rebounds than Team A)
 3) BLK (blocked more shots than Team A)
@@ -74,14 +73,16 @@ to secure a championship victory!
 the idea of punting is to focus your team build on certain categories, and in effect "punting" or better word "avoiding"
 other categories of the 9 total categories.
 ##### The Why
-- When focusing your resources in a 13 man roster build to 8, 7, or 6 categories (depending on personal preference), you
-are effectively GREAT at those focused categories, making your team dangerous in a head to head match-up 
-to win majority of the categories.
-- When focusing on specific categories, you will in effect "punt" or "defer" other statistics.
+- When building a team and focusing on 8, 7, or 6 specific categories (depending on personal preference/strategy),
+you are effectively GREAT at those focused categories, making your team dangerous in a head to head match-up 
+to win majority of the categories on a weekly basis.
+- When focusing on specific categories, you will in effect "punt" or "defer" other categories.
 
-##### Disclaimer
-- "Punting" is not a new concept and has been used by many experienced managers in previous years. Punt Kings is here
-to make this process streamlined and user-friendly to help identify extracting optimal value in your team build.
+##### Important Notes for Punting
+- "Punting" is a strategy that has been used by many experienced managers in previous years, but Punt Kings is here
+to make this process user-friendly for anyone no matter the experience/knowledge.
+- Punt Kings is created to help identify optimal value in team builds and to correctly focus the user's 
+attention in categories of the user's choice.
 - "Punting" is also commonly mistaken as "wanting to be BAD in a category". That is far from what punting accomplishes.
 When managers focus on the category they want to avoid, they effectively miss out on a player that provides good value
 in other categories you may need in your team build. 
@@ -93,7 +94,7 @@ managers that want a competitive edge in their respective leagues.
 ---
 
 
-## Data Science Process
+## The Data Science Process
 ### The Data
 
 [screencap on basketball reference page 2019 season stats]
