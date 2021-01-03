@@ -327,8 +327,8 @@ available method is suggesting to draft Kristaps Porzingis. He is lower in Yahoo
 potentially being out for the first month. Knowing this, we could wait the next rounds to select him there. That is
 optimizing our selections!! We can hope Porzingis drops to us in rounds 4/5. **That is why XRank awareness is CRUCIAL!!**
 - There are a couple of great options for our 3rd selection: Fred VanVleet (XRank: 36), Zach LaVine (XRank: 30),
-Shai Gilgeous-Alexander (XRank: 26) to name a few. These XRank differences are that huge of a difference to lose value
-in and you could go with any of your personal preferences/beliefs. 
+Shai Gilgeous-Alexander (XRank: 26) to name a few. These XRank differences to punt value are miniscule so we 
+could go with any of your personal preferences/beliefs in confidence. 
 - However, knowing I selected two point guards to build my team, I would like to look at a big man here, and there are
 2 that catch my eye and are in the best available method: Jusuf Nurkic, Nikola Vucevic. Knowing they won't be there for
 me in round 4/5, I will select **Jusuf Nurkic**.
@@ -373,7 +373,7 @@ are lower than Team B's due to a hyper-focus on valuing players that have high u
 more guard play and less big men, hence lower rebounding. 
 
 These correlations can be applied to any punt strategy and with more experience the fantasy manager should be careful
-in not giving up on more than 3 categories. 
+in not giving up more than 3 categories. 
 
 
 ---
@@ -384,7 +384,7 @@ Ultimately the draft process is fully unpredictable. There will be players that 
 change the entire frequency of the draft. This tool will provide an assistance to the chaos of a draft as there are time
 limits per selection. 
 
-***It is crucial to understand that Punt Kings is not designed to be a completely automated process to build a team.***
+***It is crucial to understand that Punt Kings is not designed to completely automat the draft process.***
 
 #### Requirements:
 - The fantasy owner must apply their own personality and fun in building your team. Draft the players you enjoy watching!

@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75503290-cb76-4441-b41b-bfa3be3b1f3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/1-yahoo_draft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/10-team_a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/11-team_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/12-hyp_match.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/2-draft_ovr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/3-draft_fg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/4-draft_best_avail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/5-draft_track_team_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/6-sec_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/7-draft_track_team_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/8-draft_track_team_final.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/9-draft_result_comparison.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/final_proj.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/pk_values_fg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/pk_values_ft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/pk_values_ovr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/rmse_chart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/yahoo_ss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/data_exploration.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/data_exploration.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/punting.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/punting.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draft_kit/draft_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/draft_kit/draft_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/draft_kit/sample_draft_results" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/predict_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/predict_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/projections.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/projections.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,8 +61,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="660">
-                <caret line="373" lean-forward="true" selection-start-line="373" selection-end-line="373" />
+              <first_editor relative-caret-position="740">
+                <caret line="330" lean-forward="true" selection-start-line="330" selection-end-line="330" />
               </first_editor>
               <second_editor />
             </state>
@@ -436,8 +411,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="660">
-            <caret line="373" lean-forward="true" selection-start-line="373" selection-end-line="373" />
+          <first_editor relative-caret-position="740">
+            <caret line="330" lean-forward="true" selection-start-line="330" selection-end-line="330" />
           </first_editor>
           <second_editor />
         </state>
