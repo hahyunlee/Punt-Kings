@@ -1,13 +1,13 @@
 # Punt Kings
 
-Generate a competitive edge in your 9-Cat Fantasy Basketball league.
+Gain that competitive edge in your 9-Cat Fantasy Basketball league.
 
 ![NBA Allstars](img/nba_allstars.jpeg)
 
 
 ### What is Punt Kings?
 
-The goal of Punt Kings is to provide fantasy basketball managers a platform to optimize their roster with a competitive 
+The goal of Punt Kings is to provide fantasy basketball managers a platform to optimize their roster build to establish a competitive 
 edge in 9 category (9-Cat) formats.
 
 ##### The Process:
@@ -37,18 +37,18 @@ The 9 categories aggregated from weekly match-ups are:
 8) Blocks (BLK)
 9) Turnovers (TO)
 
-For every category a team edges the other team in, the team is awarded 1 point. 
+For every category a team outperforms the other team in is 1 point out of 9 possible points. 
 
 Example: Team A vs. Team B
 
-Team A wins the categories:
+Team A wins the following categories:
 1) FT% (higher percentage than Team B)
 2) 3PM (more 3 pointers made than Team B)
 3) PTS (scored more points than Team B)
 4) AST (tallied more assists than Team B)
 5) STL (more steals than Team B)
 
-Team B wins the categories:
+Team B wins the following categories:
 1) FG% (higher percentage than Team A)
 2) REB (collected more rebounds than Team A)
 3) BLK (blocked more shots than Team A)
@@ -59,10 +59,11 @@ Team B wins the categories:
 *Depending on your league settings, your overall season record is either 1) aggregated by your weekly score (Team A would 
 have an overall record of 5-4 and Team B, 4-5) or 2) a win is 1-0, a loss is 0-1, and a tie is 0-0-1.*
 
+The ultimate goal, of course, is to win a fantasy championship: getting into the playoffs and winning out all the head
+to head match-ups by winning majority of the categories every week.
 
-To win in 9-Cat fantasy basketball you must have the best overall record, beating out opponents in head to head 
-match-ups by winning majority of the 9 categories, and more importantly making the playoffs and winning every match-up
-to secure a championship victory!
+This is a snapshot of what a typical 9-cat weekly matchup would look like:
+![Yahoo Fantasy Screenshot Matchup](img/yahoo_ss.png)
 
 
 ### What is "punting" and why use a "punting" strategy?
@@ -70,8 +71,9 @@ to secure a championship victory!
 ##### The What
 - Implementing a "punting" strategy is where the competitive edge comes into play for your fantasy team. 
 - Instead of spreading out your team thin by ambitiously attempting to be good in all 9 categories, 
-the idea of punting is to focus your team build on certain categories, and in effect "punting" or better word "avoiding"
+the idea of punting is to focus your team build on specific categories of a manager's choice, and in effect "avoiding" 
 other categories of the 9 total categories.
+
 ##### The Why
 - When building a team and focusing on 8, 7, or 6 specific categories (depending on personal preference/strategy),
 you are effectively GREAT at those focused categories, making your team dangerous in a head to head match-up 
@@ -93,150 +95,316 @@ managers that want a competitive edge in their respective leagues.
 
 ---
 
-
-## The Data Science Process
+## First Phase: The Data Science Process
 ### The Data
 
-[screencap on basketball reference page 2019 season stats]
+The data used for modeling and projections are from [Basketball Reference](https://www.basketball-reference.com/)
 
-scraping data from basketball reference
+![Basketball Reference Homepage](img/br_home.png)
 
-nba season 1990 to present.
-
-
-#### Data Preparation (Modeling Logic / Plan)
+![Basketball Reference Homepage](img/br_totals.png)
 
 
-Create a model for each predictive stat
-Fit different models and extract the best performing model for each category.
+Basketball Reference contains season total data for every player recorded in the NBA.
+
+This data used for our projections dates back to the 1990 NBA season and every season on has been 
+scraped and cleaned for modeling.
 
 
+### Data Preparation
+
+The concept of our modeling procedure is to create individual models for each statistic needed for projections.
+
+The seasonal statistics we are targeting are:
+1) Total points
+2) Total field goals made (both 2 point and 3 point makes)
+3) Total field goal attempts
+4) Total 3 pointers made
+5) Total 3 pointers attempted
+6) Total free throws made
+7) Total free throws attempted
+8) Total offensive rebounds
+9) Total defensive rebounds
+10) Total assists
+11) Total steals
+12) Total blocks
+13) Total turnovers
+14) Total games played
+15) Total games started
+16) Total minutes played
+
+**There will be 16 total models to predict these 16 statistics.**
+
+These predictions will be used to calculate per game stats for the 9 categories. 
 
 
-#### Results
-
-Predicting: PTS
-
-Lasso model RMSE: 298.381
-Baseline model RMSE: 337.60976640039905
-
-
-Predicting: FG
-
-Lasso model RMSE: 111.4656
-Baseline model RMSE: 125.46233914481796
-
-
-Predicting: FGA
-
-Lasso model RMSE: 235.582
-Baseline model RMSE: 260.4556686651412
-
-
-Predicting: 3P
-
-LR model RMSE: 29.4272
-Baseline model RMSE: 42.84477514565286
-
-
-Predicting: 3PA
-
-LR model RMSE: 74.2045
-Baseline model RMSE: 109.16275592688835
-
-
-Predicting: FT
-
-LR model RMSE: 66.251
-Baseline model RMSE: 62.51260067153219
-
-
-Predicting: FTA
-
-LR model RMSE: 84.0169
-Baseline model RMSE: 79.28739049345826
-
-
-Predicting: ORB
-
-LR model RMSE: 41.5894
-Baseline model RMSE: 37.56127679623134
-
-
-Predicting: DRB
-
-LR model RMSE: 94.0248
-Baseline model RMSE: 111.62634880516703
-
-
-Predicting: AST
-
-LR model RMSE: 74.7995
-Baseline model RMSE: 81.07959352042222
-
-
-Predicting: STL
-
-LR model RMSE: 23.8926
-Baseline model RMSE: 25.377872404261755
-
-
-Predicting: BLK
-
-LR model RMSE: 22.466
-Baseline model RMSE: 21.12675568622032
-
-
-Predicting: TOV
-
-LR model RMSE: 40.7704
-Baseline model RMSE: 42.269046950423274
-
-
-Predicting: G
-
-LR model RMSE: 20.2908
-Baseline model RMSE: 24.67246608112517
-
-
-Predicting: GS
-
-Lasso model RMSE: 21.7821
-Baseline model RMSE: 25.2627455095366
-
-
-Predicting: MP
-
-Lasso model RMSE: 636.6764
-Baseline model RMSE: 695.98160755745
+With feature engineering and gathering variables that may help predict performance, we will gather all the previous
+season data and train the data to predict the next season's target stat (one of the 16 targets mentioned above). 
 
 
 
+## Prediction
+
+Models:
+1) Linear Regression
+2) Lasso
+3) Ridge
+
+**A method will fit all 3 models and extract the best performing model for each specific statistic as our
+go-to model for that statistical model.**
+
+
+### Results
+
+The following chart shows the root mean squared error of our models for every predicted statistic. 
+These statistics is a representative of total stats for an entire season (maximum 82 games per season).
+
+The baseline model we are comparing the metrics with is simply replicating the previous season's statistic. 
+Essentially we are comparing *'if we just predict that a player will repeat last season's performance is that a
+better prediction than our models?'*
+
+Ideally we want our models to perform better than this baseline.
+
+
+![Results RMSE Chart](img/rmse_chart.png)
+
+As we can see from the results, free throw attempts, offensive rebounds, blocks are the 3 predictive statistics of the 
+total 16 predicted stats that performed worse than the baseline model. For future development/predictions we may opt
+to replicate a player's previous season performance for those specific statistics for future projections.
+
+Nonetheless the models have performed fairly well compared to the baseline.
+
+
+### Punt Kings' Final Projections for 2020-21 NBA Season (Preview)
+
+Our final product of projections would look as such:
+
+![Punt Kings 2020-21 NBA Season Projections](img/final_proj.png)
+
+
+*These projections are created by applying averages based on games projected.*
+
+
+---
+## Second Phase: Assigning Values to Players
+
+*Disclaimer: The following snapshots and examples from this point on are extracted from 
+[HashtagBasketball.com](https://hashtagbasketball.com/fantasy-basketball-projections) projections, by Joseph Mamone
+(Twitter: [@josephmamone](https://twitter.com/josephmamone)). The rest of the concepts and development is carried
+on through the Punt Kings project.*
+
+
+At this phase of Punt Kings, we will assign values to every NBA player to identify the top players to draft for your
+fantasy team.
+
+
+How values are calculated:
+- For every category of the 9 total categories, we will calculate the **Z-score** for every NBA player.
+- A player's **total** value is found by the net result of all 9 z-scores summed together. 
+
+
+The following image showcases and ranks the top fantasy basketball players. Again, this is using HashtagBasketball's
+projections, but this concept could be applied with any data frame of player projections.
+
+
+![Values DataFrame](img/pk_values_ovr.png)
+
+
+Here we can find the categorical strengths of each NBA player. For example, Anthony Davis, the highest ranked player,
+has a great all around game compared to the average NBA player. He is excellent in blocks, rebounds, steals, and scoring,
+with his weakness being 3 pointers, assists, and turnovers. Still relative to other NBA stars he is still a great all
+around fantasy player and should generally be taken in the top 3 picks of fantasy drafts. 
+
+
+### Punt Values
+
+*Now we can re-calculate a player's value by punting/removing certain categorical weaknesses of a player.*
+
+If you want to implement a field goal percentage and turnover punt strategy (indifference to low efficient
+field goal shooters and high turnover rates), you can maximize the value of players with the following rankings:
+
+#### Punting field goal percentage
+
+![Values Punt FG](img/pk_values_fg.png)
+
+
+On the other hand, if you want to implement a free throw percentage and turnover punt strategy, you would notice
+Giannis Antetokounmpo jumps into a top player to draft. Though there may not seem to be much change, that is due
+to the top players having great overall value that a punt method won't tarnish their worth. The values and rankings
+signficantly change past the top 10 players. 
+
+
+#### Punting free throw percentage
+
+![Values Punt FT](img/pk_values_ft.png)
+
+
+These rankings are great to reference to understand what players are good in what categories and how to build your team
+accordingly. Still, even with this information it can be difficult to keep track during a draft. That is why this project
+also creates a draft tool for users to use during a draft that will provide best available players for a specific
+draft strategy and to keep track of the players already drafted. 
+
+---
+## Third Phase: Punt Kings Draft Tool
+
+*This draft tool currently only supports Yahoo Fantasy leagues.*
+
+There are 3 main features to this draft tool. 
+1) Show best available players overall
+2) Show best available players based on a punt strategy
+3) Track your team build during the draft
+
+
+As of (12/19/2019), this draft tool is only ran through a back end Jupyter Notebook that will require a Yahoo league
+id to scrape information in real-time.
+
+
+The following will demonstrate from a back-end perspective of how this draft tool can help simplify the drafting process.
+
+
+**For this demonstration we will implement a PUNT FIELD GOAL PERCENTAGE AND TURNOVER strategy**
+
+This is what a typical draft room looks like in Yahoo:
+![Yahoo Draft Screencap](img/1-yahoo_draft.png)
+
+- As you can see there is a Yahoo XRank already attached to a player. 
+- It is crucial to notice where players are in the XRank. 
+- The point of the draft tool is to optimize value. So drafting a player close to its XRank is the best way to 
+optimize value. 
+- (This means just because our punt rankings has a player ranked at top of the list, it doesn't mean
+you should draft them ahead of all the players above them in XRank. The general range you should "reach" for a player
+is 1-2 rounds. Confusing I know! Hopefully if you continue along it will make more sense.)
+
+
+The first draft tool feature is to show best available players overall and we can see that here (note: this method
+can be ran at any point of the draft):
+
+![Best Available Overall](img/2-draft_ovr.png)
+
+
+- The best available rankings without punting anything shows Anthony Davis as the number 1.
+- Yahoo XRank has Anthony Davis at 3.
+- Our draft tool suggests we should NOT be drafting Luka Doncic #1 overall. 
+- Although he is a young talent and a lot of hype building around him, our numbers suggest he should really be a 
+mid first round type player. 
+- This shows how we must be aware of Yahoo's XRanking of players and where we have the players in our rankings.
+
+
+**Since we are using a punt FG% and TO strategy, let's take a glimpse of the punt rankings:**
+
+![Best Avaliable Punt FG, TO](img/3-draft_fg.png)
+
+**We have the #1 overall pick in this Mock Draft, so we will go ahead and select James Harden**
+
+- After selecting James Harden as he is ranked first in our punt rankings, we can run our "Track Team Stats" method:
+
+![Track Team Stats 1](img/5-draft_track_team_1.png)
+
+- Here, we can see James Harden is assigned to our team and we can see our projections in a data frame.
+- This will continue to build with more of our selections.
+
+
+**Notice whenever a selection is made in the draft room, the information is passed in real time for our best available
+and removing the players from the available players list**
+
+![Best Available Proof](img/4-draft_best_avail.png)
+ 
+
+**Now as we are approaching the tail end of the 2nd round and beginning of the 3rd round this is a look at the
+draft room as well as the best available updated in real-time:**
+
+![2nd/3rd Round](img/6-sec_round.png)
+
+### 2nd and 3rd Round Selection Logic/Thought Process
+
+- It just so happens Kyrie Irving is the best available from both Yahoo's XRank as well as our Punt Rankings, so our 
+second pick will be **Kyrie Irving**.
+- The third round is where it gets interesting. According to Yahoo, the next best player
+is Ben Simmons. With our player profiles, we know Ben Simmons struggles as a three point shooter and a free throw
+shooter. That is why he is nowhere to be seen in our punt rankings and it is wise to avoid selecting him here.
+- As mentioned earlier about the **importance of XRank awareness and optimizing value**, it may seem like the best
+available method is suggesting to draft Kristaps Porzingis. He is lower in Yahoo XRanks due to his injury status and
+potentially being out for the first month. Knowing this, we could wait the next rounds to select him there. That is
+optimizing our selections!! We can hope Porzingis drops to us in rounds 4/5. **That is why XRank awareness is CRUCIAL!!**
+- There are a couple of great options for our 3rd selection: Fred VanVleet (XRank: 36), Zach LaVine (XRank: 30),
+Shai Gilgeous-Alexander (XRank: 26) to name a few. These XRank differences are that huge of a difference to lose value
+in and you could go with any of your personal preferences/beliefs. 
+- However, knowing I selected two point guards to build my team, I would like to look at a big man here, and there are
+2 that catch my eye and are in the best available method: Jusuf Nurkic, Nikola Vucevic. Knowing they won't be there for
+me in round 4/5, I will select **Jusuf Nurkic**.
+
+**Tracking team stats after the first 3 picks:**
+
+![Track Team 2](img/7-draft_track_team_2.png)
+
+*We can see how are team is looking with the first three picks and to have an idea what we need to target for the next
+rounds*
+
+**Continue this process for the rest of the rounds...Fast forward and this was the final team:**
+
+![Track Team Final](img/8-draft_track_team_final.png)
+
+
+***Let's compare two teams: 1) Team A using Punt Kings, 2) Team B taking the best available player based on XRank:***
+
+![Draft Results](img/9-draft_result_comparison.png)
+
+***Tracking Team A draft projected average stats:***
+
+![Team A](img/10-team_a.png)
+
+***Tracking Team B draft projected average stats:***
+
+![Team B](img/11-team_b.png)
+
+**To demonstrate the final results of what punting accomplishes let's put Team A and Team B in a hypothetical 
+head to head based on every players projected averages:**
+
+![Head To Head](img/12-hyp_match.png)
+
+### *Voila~~ TEAM A WINS 6-3*
+
+Team A's punt strategy was a success in the sense that "ignoring" bad field goal percentages and high turnovers, Team A 
+in effect got stronger in focused categories.
+
+It should be noted that there is going to be variance (as you can see with low rebounding numbers) 
+where there is correlation at play when sacrificing specific categories. In this case, Team A's rebounding numbers
+are lower than Team B's due to a hyper-focus on valuing players that have high usage with scoring/assists which implies
+more guard play and less big men, hence lower rebounding. 
+
+These correlations can be applied to any punt strategy and with more experience the fantasy manager should be careful
+in not giving up on more than 3 categories. 
 
 
 ---
 
-### Punt Kings Draft Tool
+### Conclusion
 
-[scraping yahoo data draft results real time]
+Ultimately the draft process is fully unpredictable. There will be players that fantasy owners will reach for that will
+change the entire frequency of the draft. This tool will provide an assistance to the chaos of a draft as there are time
+limits per selection. 
 
-[compare an optimized (w/ adp) lineup using some punt strategy vs a "stacked" 
-team that do not work together (show their adp)]
+***It is crucial to understand that Punt Kings is not designed to be a completely automated process to build a team.***
 
+#### Requirements:
+- The fantasy owner must apply their own personality and fun in building your team. Draft the players you enjoy watching!
+- Understand where players are generally being taken and in what rounds to understand where the value is in every round.
+- It is good to have a strong categorical awareness of players and knowing each player's strengths/weaknesses.
+- The draft isn't the only way to win leagues. It is a great way to build a strong foundation, but stay active
+during the season with waiver pickups.  
 
-Draft strategy (concept of extracting optimal value on a per round basis)
-
-Catergorical awareness (use this tool to understand a player's strength and weakness)
-
-
-
+Now go out there and have some fun and go dominate your leagues!!
 
 ---
 
-###Future Work
+### Future Work
+
+This is far from a finished project and there are many things needed to improve projections and implementation.
 
 1) Add more features to data for modeling (draft class? age? ligament-type injury history?)
-2) Need a way to understand a player coming off an injury
-3) Predictions for rookies
-4) Add a human element to projections (understanding/projecting impact of player team and if usage is trending up
-add a sentiment factor for each player.)
+2) Need a way to understand a player coming off an injury. Current projections do not account for a player that got
+injured in the previous season, or is expected to have higher usage the following season.
+3) Predictions for rookies that have no historical data in the NBA.
+4) Implement ongoing projections during the season based on recent performance (forecasting)
+5) Create a simplified and clean front end experience draft tool that can be used by any user
+

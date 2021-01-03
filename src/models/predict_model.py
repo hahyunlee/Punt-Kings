@@ -1,6 +1,7 @@
 from sklearn.linear_model import LinearRegression, Lasso, Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
 from src.data import pipeline
 import pandas as pd
 import numpy as np
@@ -105,9 +106,6 @@ def predict_all_cats(dict_dfs, list_cats, latest_season = 'df_2019', final_seaso
         df[cat] = y_final.round(3)
 
     return df
-
-
-
 
 
 # def r2_scores_cats(dict_of_df,list_of_cats,last_df ='df_1617',test_year = 'df_1718'):
