@@ -1,16 +1,18 @@
 # Punt Kings
 
-Gain that competitive edge in your 9-Cat Fantasy Basketball league.
+Punt Kings is here to help you gain that competitive edge in your 9 Category Fantasy Basketball leagues!
 
 ![NBA Allstars](img/nba_allstars.jpeg)
 
 
 ### What is Punt Kings?
 
-The goal of Punt Kings is to provide fantasy basketball managers a platform to optimize their roster build to establish a competitive 
-edge in 9 category (9-Cat) formats.
+Punt Kings is a platform for fantasy managers that projects player performances, provides a value report of every
+ fantasy-relevant NBA player, and optimizes a user's team during the draft process. Punt Kings will implement 
+ a ***"punting"*** strategy that will strengthen any fantasy basketball team. 
 
-##### The Process:
+
+#### The Process:
 
 1) Project individual player performances for the upcoming NBA season.
 2) Construct a statistical strengths/weaknesses profile for each player.
@@ -19,7 +21,7 @@ strengths  and weaknesses relative to the rest of the league, and the type of st
 round all simultaneously during a fantasy draft. 
 
 
-### What is a 9-Cat format in fantasy basketball?
+### What is a 9 Category (9-Cat) format in fantasy basketball?
 
 Unlike fantasy football or points format fantasy basketball that uses a standardized point system for all statistics,
 **9-Cat format compartmentalizes a head to head match-up into 9 different categories based on 9 basketball 
@@ -37,24 +39,27 @@ The 9 categories aggregated from weekly match-ups are:
 8) Blocks (BLK)
 9) Turnovers (TO)
 
-For every category a team outperforms the other team in is 1 point out of 9 possible points. 
+For every category a team outperforms the other team in is 1 point out of the 9 possible points. 
 
-Example: Team A vs. Team B
+#### *Example: Team A ("PANDEMIC P") vs. Team B ("BrookLopez3rdRdPlz")*
+
+![Yahoo Fantasy Screenshot Matchup](img/9cat_score.png)
+
 
 Team A wins the following categories:
 1) FT% (higher percentage than Team B)
 2) 3PM (more 3 pointers made than Team B)
 3) PTS (scored more points than Team B)
-4) AST (tallied more assists than Team B)
-5) STL (more steals than Team B)
+4) REB (collected more rebounds than Team B)
+5) AST (tallied more assists than Team B)
+6) STL (more steals than Team B)
+7) BLK (more blocks than team B)
 
 Team B wins the following categories:
 1) FG% (higher percentage than Team A)
-2) REB (collected more rebounds than Team A)
-3) BLK (blocked more shots than Team A)
-4) TO (generated less turnovers than Team A)
+2) TO (generated less turnovers than Team A)
 
-***Team A wins 5-4.***
+***Team A wins 7-2.***
 
 *Depending on your league settings, your overall season record is either 1) aggregated by your weekly score (Team A would 
 have an overall record of 5-4 and Team B, 4-5) or 2) a win is 1-0, a loss is 0-1, and a tie is 0-0-1.*
@@ -62,36 +67,38 @@ have an overall record of 5-4 and Team B, 4-5) or 2) a win is 1-0, a loss is 0-1
 The ultimate goal, of course, is to win a fantasy championship: getting into the playoffs and winning out all the head
 to head match-ups by winning majority of the categories every week.
 
-This is a snapshot of what a typical 9-cat weekly matchup would look like:
-![Yahoo Fantasy Screenshot Matchup](img/yahoo_ss.png)
-
+---
+## Punting = Focus + Strength!
 
 ### What is "punting" and why use a "punting" strategy?
 
 ##### The What
 - Implementing a "punting" strategy is where the competitive edge comes into play for your fantasy team. 
 - Instead of spreading out your team thin by ambitiously attempting to be good in all 9 categories, 
-the idea of punting is to focus your team build on specific categories of a manager's choice, and in effect "avoiding" 
-other categories of the 9 total categories.
+the idea of punting is to focus the attention on a number of categories, and in effect "excluding" ("punting") 
+1 or 2 categories.
 
 ##### The Why
 - When building a team and focusing on 8, 7, or 6 specific categories (depending on personal preference/strategy),
-you are effectively GREAT at those focused categories, making your team dangerous in a head to head match-up 
-to win majority of the categories on a weekly basis.
+you are effectively GREAT at those focused categories, increasing your team's likelihood of
+ winning out majority of the categories in a head to head match-up.
 - When focusing on specific categories, you will in effect "punt" or "defer" other categories.
 
-##### Important Notes for Punting
-- "Punting" is a strategy that has been used by many experienced managers in previous years, but Punt Kings is here
-to make this process user-friendly for anyone no matter the experience/knowledge.
-- Punt Kings is created to help identify optimal value in team builds and to correctly focus the user's 
-attention in categories of the user's choice.
-- "Punting" is also commonly mistaken as "wanting to be BAD in a category". That is far from what punting accomplishes.
-When managers focus on the category they want to avoid, they effectively miss out on a player that provides good value
-in other categories you may need in your team build. 
-- There is a fine line to punting and if not careful the team could be unstoppable in 4 categories, but struggle
-to be competitive in 5 others, leading to losses every week. 
-- That is why optimization and tracking of team stats is crucial, and why Punt Kings will provide value to fantasy 
-managers that want a competitive edge in their respective leagues. 
+##### Common Mistakes with Punting
+- The concept of punting is commonly interpreted as "wanting to be BAD in a category". 
+    That is far from what punting accomplishes. If a manager opts for a punting free throw percentage strategy, 
+    the manager should not be actively looking for players that are bad at shooting free throws.
+- Instead, the manager should look for the best player and not be alarmed by a poor free throw percentage. Managers
+    commonly fall into the trap of tunnel vision only looking for players that have a poor free throw percentage 
+    thinking this automatically means they are strengthening in other categories. The focus should still be looking
+    for the best value regardless of poor free throw shooting. 
+- There is a fine line to punting and if not careful the team could be hyper focused in 4 categories and be extremely
+    strong in 4 categories, but then extremely weak in 5 categories. This will not increase the likelihood of winning 
+    week in and week out, and the manager, when building with a punt strategy should use Punt Kings to monitor that 
+    fine line. 
+
+**Optimization and tracking of team stats is crucial, and this is why/how Punt Kings will provide value to fantasy 
+    managers that want a easy to follow guide in building the optimal team.**
 
 ---
 
@@ -150,11 +157,13 @@ Models:
 2) Lasso
 3) Ridge
 
+We will prepare train/test data and validate the data with all three models. 
+
 **A method will fit all 3 models and extract the best performing model for each specific statistic as our
 go-to model for that statistical model.**
 
 
-### Results
+## Results
 
 The following chart shows the root mean squared error of our models for every predicted statistic. 
 These statistics is a representative of total stats for an entire season (maximum 82 games per season).
@@ -188,7 +197,7 @@ Our final product of projections would look as such:
 ---
 ## Second Phase: Assigning Values to Players
 
-*Disclaimer: The following snapshots and examples from this point on are extracted from 
+*Disclaimer: The following projection data used from this point on are extracted from 
 [HashtagBasketball.com](https://hashtagbasketball.com/fantasy-basketball-projections) projections, by Joseph Mamone
 (Twitter: [@josephmamone](https://twitter.com/josephmamone)). The rest of the concepts and development is carried
 on through the Punt Kings project.*
@@ -384,7 +393,7 @@ Ultimately the draft process is fully unpredictable. There will be players that 
 change the entire frequency of the draft. This tool will provide an assistance to the chaos of a draft as there are time
 limits per selection. 
 
-***It is crucial to understand that Punt Kings is not designed to completely automat the draft process.***
+***It is crucial to understand that Punt Kings is not designed to completely automate the draft process.***
 
 #### Requirements:
 - The fantasy owner must apply their own personality and fun in building your team. Draft the players you enjoy watching!
